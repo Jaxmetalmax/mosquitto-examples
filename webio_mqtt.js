@@ -1,7 +1,7 @@
 /* 
  * MQTT-WebClient example for Web-IO 4.0
 */
-var hostname = "192.168.33.10";
+var hostname = "127.0.0.1";
 var port = 9001;
 var clientId = "webclient";
 clientId += new Date().getUTCMilliseconds();;
