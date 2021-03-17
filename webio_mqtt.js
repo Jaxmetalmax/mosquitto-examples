@@ -1,13 +1,13 @@
 /* 
  * MQTT-WebClient example for Web-IO 4.0
 */
-var hostname = "127.0.0.1";
-var port = 9001;
+const hostname = "192.168.33.10";
+const port = 9001;
 var clientId = "webclient";
 clientId += new Date().getUTCMilliseconds();;
-var username = "cliente1";
-var password = "123456";
-var subscription = "casa/habitaciones/hab1/luz";
+const username = "cliente1";
+const password = "123456";
+const subscription = "/casa/habitaciones/#";
 
 mqttClient = new Paho.MQTT.Client(hostname, port, clientId);
 mqttClient.onMessageArrived =  MessageArrived;
@@ -58,9 +58,9 @@ function MessageArrived(message) {
         default:
             displayClass = "unknown";
     }
-    var topic = message.destinationName.split("/");
+    let topic = message.destinationName.split("/");
     if (topic.length == 4){
-        var ioname = topic[2];
+        let ioname = topic[2]+"/"+topic[3];
         UpdateElement(ioname, displayClass);
     }
 }
