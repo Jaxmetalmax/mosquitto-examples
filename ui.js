@@ -10,7 +10,7 @@ function UpdateElement(ioname, displayClass){
     }
  } 
  
- const topic = "/casa/habitaciones/";
+ const topic = "casa/habitaciones/";
 
  /* Toggles an input in the web interfaces and 
  * initiates an MQTT publish */
@@ -29,7 +29,7 @@ function ToggleOutput(ioname){
         message.destinationName = topic+ioname;
         message.retained = true;
         mqttClient.send(message);
-        cell.className = "on";
+        //cell.className = "on";
         break;
     default:
         cell.className = "unknown";

@@ -4,10 +4,11 @@
 const hostname = "192.168.33.10";
 const port = 9001;
 var clientId = "webclient";
-clientId += new Date().getUTCMilliseconds();;
+clientId += new Date().getUTCMilliseconds();
 const username = "cliente1";
 const password = "123456";
-const subscription = "/casa/habitaciones/#";
+const subscription = "casa/habitaciones/#";
+
 
 mqttClient = new Paho.MQTT.Client(hostname, port, clientId);
 mqttClient.onMessageArrived =  MessageArrived;
@@ -64,6 +65,3 @@ function MessageArrived(message) {
         UpdateElement(ioname, displayClass);
     }
 }
-
-
-

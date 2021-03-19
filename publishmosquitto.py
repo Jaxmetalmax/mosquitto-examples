@@ -17,4 +17,3 @@ topic = "casa/habitaciones/hab1/luz"
 while True:
     message = input("Captura 0 para Apagar o 1 para Encender: ")
     client.publish(topic, str(message))
-
